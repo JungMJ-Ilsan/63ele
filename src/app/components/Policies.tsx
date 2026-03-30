@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { 
   Building2, 
   GraduationCap, 
@@ -12,11 +13,65 @@ import {
   Briefcase,
   Shield,
   ChevronRight,
-  CheckCircle2
+  CheckCircle2,
+  X
 } from 'lucide-react';
 
 export function Policies() {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [showSurveyModal, setShowSurveyModal] = useState(false);
+  const [selectedAge, setSelectedAge] = useState<string | null>(null);
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Show survey modal on page load
+    setShowSurveyModal(true);
+  }, []);
+
+  const handleSurveySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!selectedAge || !selectedRegion) return;
+
+    // Mapping logic based on age and region combination
+    let targetPolicy = 3; // default
+    
+    if (selectedAge === '20' && selectedRegion === 'A') {
+      targetPolicy = 1;
+    } else if (selectedAge === '40' && selectedRegion === 'A') {
+      targetPolicy = 2;
+    } else if (selectedAge === '60' && selectedRegion === 'B') {
+      targetPolicy = 4;
+    } else if ((selectedAge === '30' || selectedAge === '50') || (selectedRegion === 'C' || selectedRegion === 'D')) {
+      targetPolicy = 3;
+    } else {
+      targetPolicy = 5;
+    }
+    
+    // Save entry point to localStorage
+    localStorage.setItem('campaignEntryPage', targetPolicy.toString());
+    localStorage.setItem('campaignUserAge', selectedAge);
+    localStorage.setItem('campaignUserRegion', selectedRegion);
+    
+    // Navigate to appropriate policy page
+    navigate(`/policy${targetPolicy}`);
+  };
+
+  const ageOptions = [
+    { label: '20대', value: '20' },
+    { label: '30대', value: '30' },
+    { label: '40대', value: '40' },
+    { label: '50대', value: '50' },
+    { label: '60대 이상', value: '60' },
+  ];
+
+  const regionOptions = [
+    { label: 'A동네', value: 'A' },
+    { label: 'B동네', value: 'B' },
+    { label: 'C동네', value: 'C' },
+    { label: 'D동네', value: 'D' },
+  ];
 
   const categories = [
     {
@@ -258,6 +313,97 @@ export function Policies() {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Survey Modal */}
+      {showSurveyModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative w-full max-w-md bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowSurveyModal(false)}
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors z-10"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Header */}
+            <div className="p-8 pb-6 text-center">
+              <h2 className="text-2xl font-bold text-white mb-2">맞춤 공약 찾기</h2>
+              <p className="text-white/60 text-sm">
+                연령대와 거주지역을 선택하시면<br />
+                맞춤형 공약을 안내해드립니다
+              </p>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSurveySubmit} className="p-8 pt-0 space-y-6">
+              {/* Age Selection */}
+              <div>
+                <label className="block text-white font-medium mb-3 text-sm">
+                  연령대를 선택해주세요
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {ageOptions.map((option) => (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => setSelectedAge(option.value)}
+                      className={`px-4 py-3 rounded-lg font-medium text-sm transition-all ${
+                        selectedAge === option.value
+                          ? 'bg-orange-500 text-white shadow-lg'
+                          : 'bg-white/10 text-white/70 hover:bg-white/20'
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Region Selection */}
+              <div>
+                <label className="block text-white font-medium mb-3 text-sm">
+                  거주 지역을 선택해주세요
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {regionOptions.map((option) => (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => setSelectedRegion(option.value)}
+                      className={`px-4 py-3 rounded-lg font-medium text-sm transition-all ${
+                        selectedRegion === option.value
+                          ? 'bg-orange-500 text-white shadow-lg'
+                          : 'bg-white/10 text-white/70 hover:bg-white/20'
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={!selectedAge || !selectedRegion}
+                className={`w-full py-4 rounded-lg font-medium flex items-center justify-center gap-2 transition-all ${
+                  selectedAge && selectedRegion
+                    ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg'
+                    : 'bg-white/10 text-white/40 cursor-not-allowed'
+                }`}
+              >
+                맞춤 공약 확인하기
+                <ChevronRight size={20} />
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
