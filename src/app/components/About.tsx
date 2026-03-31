@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { GraduationCap, Briefcase, MapPin, Heart } from 'lucide-react';
+import { GraduationCap, Briefcase, MapPin } from 'lucide-react';
 import candidatePhoto from 'figma:asset/ad7ceeb721975ef4f719a4e5241a67c7358e5e4c.png';
 
 export function About() {
@@ -84,7 +84,7 @@ export function About() {
         </div>
       </section>
 
-      {/* 후보자 약력 Section */}
+      {/* Profile Section */}
       <section className="relative py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -98,7 +98,7 @@ export function About() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* 학력 */}
+              {/* Education */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -121,7 +121,7 @@ export function About() {
                 </div>
               </motion.div>
 
-              {/* 경력 */}
+              {/* Career */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -153,7 +153,7 @@ export function About() {
         </div>
       </section>
 
-      {/* AI 전문성 Section */}
+      {/* AI Expertise Section */}
       <section className="relative py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -199,7 +199,7 @@ export function About() {
         </div>
       </section>
 
-      {/* 선거 철학 Section */}
+      {/* Campaign Philosophy Section */}
       <section className="relative py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div

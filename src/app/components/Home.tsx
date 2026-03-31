@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
-import { ArrowRight, Home, Cpu, Sparkles, Youtube, Instagram, Facebook, Heart } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon, Cpu, Sparkles, Youtube, Instagram, Facebook, Heart } from 'lucide-react';
 
 export function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 20% 30%, #FF7210 1px, transparent 1px)`,
@@ -22,7 +21,6 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
               <div className="text-gray-900 mb-4">복잡한 미래 기술,</div>
               <div className="font-black">
@@ -31,7 +29,6 @@ export function Home() {
               </div>
             </h1>
 
-            {/* Candidate Name & Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -45,7 +42,6 @@ export function Home() {
               <p className="text-lg text-gray-600">정발산동, 중산 1동, 중산 2동, 일산 2동</p>
             </motion.div>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,12 +63,11 @@ export function Home() {
               </Link>
             </motion.div>
 
-            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="flex flex-wrap justify-center gap-3 mb-4"
+              className="flex flex-wrap justify-center gap-3"
             >
               <a href="#" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:border-[#FF7210] hover:text-[#FF7210] transition-all">
                 <Youtube size={16} />
@@ -146,7 +141,6 @@ export function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Value 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +150,7 @@ export function Home() {
             >
               <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#FF7210] transition-all hover:shadow-lg h-full">
                 <div className="w-14 h-14 bg-[#FF7210] rounded-xl flex items-center justify-center mb-6">
-                  <Home className="text-white" size={28} />
+                  <HomeIcon className="text-white" size={28} />
                 </div>
                 <h3 className="text-2xl font-black text-gray-900 mb-4">옆집 아들 출신</h3>
                 <div className="text-gray-700 space-y-3 leading-relaxed">
@@ -170,7 +164,6 @@ export function Home() {
               </div>
             </motion.div>
 
-            {/* Value 2 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -194,7 +187,6 @@ export function Home() {
               </div>
             </motion.div>
 
-            {/* Value 3 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -221,7 +213,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 후보자 약력 Section */}
+      {/* Profile Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
@@ -235,7 +227,6 @@ export function Home() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {/* 학력 */}
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="text-xl font-black text-gray-900 mb-6 pb-3 border-b-2 border-[#FF7210]">
                   학력
@@ -248,7 +239,6 @@ export function Home() {
                 </div>
               </div>
 
-              {/* 경력 */}
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="text-xl font-black text-gray-900 mb-6 pb-3 border-b-2 border-[#FF7210]">
                   경력
