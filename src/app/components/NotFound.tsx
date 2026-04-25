@@ -4,7 +4,7 @@ import { Home, ArrowLeft } from 'lucide-react';
 
 export function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,15 +17,15 @@ export function NotFound() {
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
           className="mb-8"
         >
-          <h1 className="text-9xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-9xl font-black bg-gradient-to-r from-[#FF7210] to-[#FF8534] bg-clip-text text-transparent">
             404
           </h1>
         </motion.div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
           페이지를 찾을 수 없습니다
         </h2>
-        <p className="text-white/60 mb-8 max-w-md mx-auto">
+        <p className="text-gray-600 text-lg mb-8 max-w-md mx-auto">
           요청하신 페이지가 존재하지 않거나 이동되었습니다.
         </p>
 
@@ -33,18 +33,18 @@ export function NotFound() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-full font-semibold shadow-lg shadow-blue-500/50"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FF7210] to-[#FF8534] text-white rounded-xl font-bold text-lg shadow-lg shadow-[#FF7210]/30 hover:shadow-xl"
             >
-              <Home size={20} />
+              <Home size={24} />
               홈으로 가기
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <button
               onClick={() => window.history.back()}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-gray-400 hover:shadow-lg transition-all"
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={24} />
               뒤로 가기
             </button>
           </motion.div>

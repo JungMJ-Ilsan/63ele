@@ -1,7 +1,7 @@
 
-  # 6.3 지선
+  # 정민재 일산
 
-  This is a code bundle for 6.3 지선. The original project is available at https://www.figma.com/design/8yBE82laOYdwLAEITKHyqX/6.3-%EC%A7%80%EC%84%A0.
+  This is a code bundle for 정민재 일산. The original project is available at https://www.figma.com/design/8yBE82laOYdwLAEITKHyqX/%EC%A0%95%EB%AF%BC%EC%9E%AC-%EC%9D%BC%EC%82%B0.
 
   ## Running the code
 

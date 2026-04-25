@@ -20,8 +20,7 @@ export function Navigation() {
     { path: '/', label: '홈' },
     { path: '/about', label: '후보 소개' },
     { path: '/policies', label: '공약' },
-    { path: '/vision', label: '비전' },
-    { path: '/contact', label: '참여하기' },
+    { path: '/contact', label: '소통하기' },
   ];
 
   return (
@@ -46,7 +45,7 @@ export function Navigation() {
             </motion.div>
             <div className="flex flex-col">
               <span className="text-[#111111] font-bold text-lg">정민재</span>
-              <span className="text-[#FF7210] text-xs">AI와 함께하는 미래</span>
+              <span className="text-[#FF7210] text-xs">우리 동네 미래 기술자</span>
             </div>
           </Link>
 

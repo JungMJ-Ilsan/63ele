@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>https://www.example.com/</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 후보 소개 -->
+  <url>
+    <loc>https://www.example.com/about</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 공약 메인 -->
+  <url>
+    <loc>https://www.example.com/policies</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 소통하기 -->
+  <url>
+    <loc>https://www.example.com/contact</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 직업별 공약 -->
+  <url>
+    <loc>https://www.example.com/policy/job/parent</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/job/self-employed</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/job/student-career</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/job/office-worker</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 연령별 공약 -->
+  <url>
+    <loc>https://www.example.com/policy/age/20-30</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/age/40-50</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/age/50-60</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/age/70-plus</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 지역별 공약 -->
+  <url>
+    <loc>https://www.example.com/policy/region/a</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/region/b</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.example.com/policy/region/c</loc>
+    <lastmod>2026-04-18T00:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
